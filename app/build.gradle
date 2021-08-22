@@ -9,7 +9,13 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "io.freefair.lombok" version "6.1.0"
 }
+
+group = 'com.example'
+version = '0.0.1'
+sourceCompatibility = '16'
+targetCompatibility = '16'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -22,11 +28,14 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation 'org.apache.geode:geode-core:1.13.4'
+    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.32'
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'com.example.App'
+    mainClass = 'com.example.HelloWorld'
 }
 
 tasks.named('test') {
